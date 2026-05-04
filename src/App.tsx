@@ -1,11 +1,9 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { useAuth } from './context/AuthContext'
-
 // Layouts
 import PublicLayout from './components/layout/PublicLayout'
 import DashboardLayout from './components/layout/DashboardLayout'
 import ChildLayout from './components/layout/ChildLayout'
-
 // Public Pages
 import LandingPage from './pages/public/LandingPage'
 import FeaturesPage from './pages/public/FeaturesPage'
@@ -14,7 +12,6 @@ import EducationOverviewPage from './pages/public/EducationOverviewPage'
 import AboutPage from './pages/public/AboutPage'
 import LoginPage from './pages/public/LoginPage'
 import RegisterPage from './pages/public/RegisterPage'
-
 // Parent Pages
 import DashboardHome from './pages/parent/DashboardHome'
 import ChildProfiles from './pages/parent/ChildProfiles'
@@ -23,10 +20,10 @@ import PortfolioView from './pages/parent/PortfolioView'
 import InvestmentCatalog from './pages/parent/InvestmentCatalog'
 import { AutoInvest, BankAccounts, Subscription, Notifications, SettingsPage, Reports } from './pages/parent/OtherPages'
 import PolygonResearch from './pages/parent/PolygonResearch'
-
 // Child Pages
 import WelcomeScreen from './pages/child/WelcomeScreen'
 import LearningHub from './pages/child/LearningHub'
+import ModuleView from './pages/child/ModuleView'
 import LessonView from './pages/child/LessonView'
 import QuizInterface from './pages/child/QuizInterface'
 import Achievements from './pages/child/Achievements'
@@ -72,8 +69,10 @@ export default function App() {
       <Route element={<ProtectedRoute><ChildLayout /></ProtectedRoute>}>
         <Route path="/learn" element={<WelcomeScreen />} />
         <Route path="/learn/hub" element={<LearningHub />} />
-        <Route path="/learn/module/:moduleId" element={<LessonView />} />
-        <Route path="/learn/quiz/:moduleId" element={<QuizInterface />} />
+        <Route path="/learn/module/:moduleId" element={<ModuleView />} />
+        <Route path="/learn/lesson/:moduleId/:lessonId" element={<LessonView />} />
+        <Route path="/learn/quiz/:moduleId/:lessonId" element={<QuizInterface />} />
+        <Route path="/achievements" element={<Achievements />} />
         <Route path="/learn/achievements" element={<Achievements />} />
         <Route path="/learn/simulator" element={<TradingSimulator />} />
         <Route path="/learn/chat" element={<ChatbotPage />} />
