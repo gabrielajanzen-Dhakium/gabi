@@ -22,6 +22,7 @@ import GoalWizard from './pages/parent/GoalWizard'
 import PortfolioView from './pages/parent/PortfolioView'
 import InvestmentCatalog from './pages/parent/InvestmentCatalog'
 import { AutoInvest, BankAccounts, Subscription, Notifications, SettingsPage, Reports } from './pages/parent/OtherPages'
+import PolygonResearch from './pages/parent/PolygonResearch'
 
 // Child Pages
 import WelcomeScreen from './pages/child/WelcomeScreen'
@@ -64,6 +65,7 @@ export default function App() {
         <Route path="/dashboard/settings" element={<SettingsPage />} />
         <Route path="/dashboard/notifications" element={<Notifications />} />
         <Route path="/dashboard/reports" element={<Reports />} />
+        <Route path="/dashboard/research" element={<PolygonResearch />} />
       </Route>
 
       {/* Child/Teen Dashboard */}

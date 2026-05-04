@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { mockStockPrices } from '../../data/mock-market-data'
+import { mockAllPrices } from '../../data/mock-market-data'
 import { LineChart, Line, ResponsiveContainer } from 'recharts'
 import { formatCurrencyPrecise, formatPercent } from '../../lib/utils'
 import { Search, ArrowUpDown } from 'lucide-react'
@@ -11,7 +11,7 @@ export default function TradingSimulator() {
   const [balance, setBalance] = useState(10000)
   const [holdings, setHoldings] = useState<Holding[]>([])
   const [trades, setTrades] = useState<Trade[]>([])
-  const [selected, setSelected] = useState(mockStockPrices[0])
+  const [selected, setSelected] = useState(mockAllPrices[0])
   const [qty, setQty] = useState(1)
   const [tab, setTab] = useState<'watchlist' | 'portfolio' | 'history'>('watchlist')
 
@@ -37,7 +37,7 @@ export default function TradingSimulator() {
   }
 
   const portfolioValue = holdings.reduce((s, h) => {
-    const p = mockStockPrices.find(sp => sp.ticker === h.ticker)
+    const p = mockAllPrices.find(sp => sp.ticker === h.ticker)
     return s + (p?.price ?? h.avgCost) * h.qty
   }, 0)
 
@@ -120,7 +120,7 @@ export default function TradingSimulator() {
           <div className="max-h-[500px] overflow-y-auto">
             {tab === 'watchlist' && (
               <div className="divide-y divide-border">
-                {mockStockPrices.map(s => (
+                {mockAllPrices.map(s => (
                   <button key={s.ticker} onClick={() => setSelected(s)} className={`w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-brand-50 transition-colors ${selected.ticker === s.ticker ? 'bg-brand-50' : ''}`}>
                     <div className="flex-1">
                       <p className="text-sm font-semibold text-text-primary">{s.ticker}</p>
@@ -140,7 +140,7 @@ export default function TradingSimulator() {
                 {holdings.length === 0 ? (
                   <p className="p-6 text-sm text-text-muted text-center">No holdings yet. Buy some stocks!</p>
                 ) : holdings.map(h => {
-                  const sp = mockStockPrices.find(s => s.ticker === h.ticker)
+                  const sp = mockAllPrices.find(s => s.ticker === h.ticker)
                   const current = sp?.price ?? h.avgCost
                   const pnl = (current - h.avgCost) * h.qty
                   return (

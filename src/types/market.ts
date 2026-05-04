@@ -2,6 +2,9 @@ export interface StockPrice {
   ticker: string
   name: string
   price: number
+  open?: number
+  high?: number
+  low?: number
   change: number
   changePct: number
   volume: number
@@ -10,6 +13,7 @@ export interface StockPrice {
   marketCap?: number
   peRatio?: number
   sparkline: number[]
+  timestamp?: number
 }
 
 export interface HistoricalPrice {

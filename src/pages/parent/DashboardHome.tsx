@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 import { TrendingUp, DollarSign, Target, PieChart, ArrowUpRight, ArrowDownRight } from 'lucide-react'
+import MarketStatusBanner from '../../components/common/MarketStatusBanner'
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts'
 import { mockGoals } from '../../data/mock-goals'
 import { mockPortfolios, mockTransactions } from '../../data/mock-portfolios'
@@ -20,6 +21,9 @@ export default function DashboardHome() {
 
   return (
     <div className="space-y-6 animate-fade-in">
+      {/* Live Market Status Banner — Polygon.io */}
+      <MarketStatusBanner />
+
       {/* Welcome */}
       <div>
         <h1 className="text-2xl font-bold text-text-primary">Welcome back, {user?.name.split(' ')[0]}! 👋</h1>

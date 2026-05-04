@@ -3,14 +3,14 @@ import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 import {
   LayoutDashboard, Users, Target, PieChart, TrendingUp, RefreshCw,
-  Building2, CreditCard, Settings, Bell, LogOut, ChevronLeft, ChevronRight, Search,
+  Building2, CreditCard, Settings, Bell, LogOut, ChevronLeft, ChevronRight, Search, BarChart2,
 } from 'lucide-react'
 import { getInitials } from '../../lib/utils'
 import { mockNotifications } from '../../data/mock-market-data'
 
 const iconMap: Record<string, React.ElementType> = {
   LayoutDashboard, Users, Target, PieChart, TrendingUp, RefreshCw,
-  Building2, CreditCard, Settings,
+  Building2, CreditCard, Settings, BarChart2,
 }
 
 const NAV = [
@@ -22,6 +22,7 @@ const NAV = [
   { label: 'Auto-Invest', href: '/dashboard/auto-invest', icon: 'RefreshCw' },
   { label: 'Bank Accounts', href: '/dashboard/bank-accounts', icon: 'Building2' },
   { label: 'Subscription', href: '/dashboard/subscription', icon: 'CreditCard' },
+  { label: 'Research', href: '/dashboard/research', icon: 'BarChart2' },
   { label: 'Settings', href: '/dashboard/settings', icon: 'Settings' },
 ]
 
