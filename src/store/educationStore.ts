@@ -14,8 +14,8 @@ import {
   educationModules,
   getStarRating,
   getXpForScore,
-  BadgeDef,
 } from '../data/education-content'
+import type { BadgeDef } from '../data/education-content'
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -156,9 +156,9 @@ function checkModuleCompletion(
   moduleId: number,
   lessonProgress: Record<number, LessonProgress>
 ): boolean {
-  const module = educationModules.find(m => m.id === moduleId)
-  if (!module) return false
-  return module.lessons.every(
+  const _module = educationModules.find(m => m.id === moduleId)
+  if (!_module) return false
+  return _module.lessons.every(
     lesson => lessonProgress[lesson.id]?.completedAt !== null
   )
 }
@@ -167,7 +167,7 @@ function checkModuleCompletion(
 
 export const useEducationStore = create<EducationState>()(
   persist(
-    (set, get) => ({
+    (set, _get) => ({
       lessonProgress: {},
       moduleProgress: {},
       earnedBadges: [],
@@ -203,7 +203,7 @@ export const useEducationStore = create<EducationState>()(
           const moduleComplete = checkModuleCompletion(moduleId, newLessonProgress)
           const newModuleProgress = { ...state.moduleProgress }
           if (moduleComplete && !newModuleProgress[moduleId]?.completedAt) {
-            const module = educationModules.find(m => m.id === moduleId)
+            const _module = educationModules.find(m => m.id === moduleId)
             const lessons = Object.values(newLessonProgress).filter(
               lp => lp.moduleId === moduleId
             )

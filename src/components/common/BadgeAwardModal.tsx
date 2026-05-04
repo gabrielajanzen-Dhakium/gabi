@@ -4,7 +4,7 @@
  */
 import { useEffect } from 'react'
 import { X, Star } from 'lucide-react'
-import { BadgeDef } from '../../data/education-content'
+import type { BadgeDef } from '../../data/education-content'
 
 interface Props {
   badges: BadgeDef[]

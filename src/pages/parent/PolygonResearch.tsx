@@ -158,7 +158,7 @@ function TechnicalIndicatorsSection({ ticker }: { ticker: string }) {
             <LineChart data={smaData.map((s, i) => ({ date: s.date, sma: s.value, ema: emaData[i]?.value }))}>
               <XAxis dataKey="date" tick={{ fontSize: 10, fill: '#9CA3AF' }} axisLine={false} tickLine={false} tickFormatter={d => d.slice(5)} />
               <YAxis tick={{ fontSize: 10, fill: '#9CA3AF' }} axisLine={false} tickLine={false} tickFormatter={v => `$${v.toFixed(0)}`} domain={['auto', 'auto']} />
-              <Tooltip formatter={(v: number, name: string) => [`$${v.toFixed(2)}`, name.toUpperCase()]} contentStyle={{ borderRadius: 8, fontSize: 11 }} />
+              <Tooltip formatter={(v: any, name: any) => [`$${v.toFixed(2)}`, name.toUpperCase()] as any} contentStyle={{ borderRadius: 8, fontSize: 11 }} />
               <Line type="monotone" dataKey="sma" stroke="#0047AB" strokeWidth={2} dot={false} name="SMA-20" />
               <Line type="monotone" dataKey="ema" stroke="#10B981" strokeWidth={2} dot={false} name="EMA-20" />
             </LineChart>
@@ -178,7 +178,7 @@ function TechnicalIndicatorsSection({ ticker }: { ticker: string }) {
               </defs>
               <XAxis dataKey="date" tick={{ fontSize: 10, fill: '#9CA3AF' }} axisLine={false} tickLine={false} tickFormatter={d => d.slice(5)} />
               <YAxis domain={[0, 100]} tick={{ fontSize: 10, fill: '#9CA3AF' }} axisLine={false} tickLine={false} />
-              <Tooltip formatter={(v: number) => [v.toFixed(2), 'RSI-14']} contentStyle={{ borderRadius: 8, fontSize: 11 }} />
+              <Tooltip formatter={(v: any) => [v.toFixed(2), 'RSI-14'] as any} contentStyle={{ borderRadius: 8, fontSize: 11 }} />
               <ReferenceLine y={70} stroke="#EF4444" strokeDasharray="4 2" label={{ value: 'Overbought', fontSize: 9, fill: '#EF4444' }} />
               <ReferenceLine y={30} stroke="#10B981" strokeDasharray="4 2" label={{ value: 'Oversold', fontSize: 9, fill: '#10B981' }} />
               <Area type="monotone" dataKey="value" stroke="#0047AB" strokeWidth={2} fill="url(#rsiGrad)" name="RSI-14" />
@@ -193,7 +193,7 @@ function TechnicalIndicatorsSection({ ticker }: { ticker: string }) {
             <BarChart data={macdData}>
               <XAxis dataKey="date" tick={{ fontSize: 10, fill: '#9CA3AF' }} axisLine={false} tickLine={false} tickFormatter={d => d.slice(5)} />
               <YAxis tick={{ fontSize: 10, fill: '#9CA3AF' }} axisLine={false} tickLine={false} />
-              <Tooltip formatter={(v: number, name: string) => [v.toFixed(4), name]} contentStyle={{ borderRadius: 8, fontSize: 11 }} />
+              <Tooltip formatter={(v: any, name: any) => [v.toFixed(4), name] as any} contentStyle={{ borderRadius: 8, fontSize: 11 }} />
               <ReferenceLine y={0} stroke="#E5E7EB" />
               <Bar dataKey="histogram" name="Histogram" fill="#0047AB" opacity={0.7} radius={[2, 2, 0, 0]} />
               <Bar dataKey="value"     name="MACD"      fill="#10B981" opacity={0.5} radius={[2, 2, 0, 0]} />

@@ -59,7 +59,7 @@ export default function PortfolioView() {
                 </defs>
                 <XAxis dataKey="date" tick={{ fontSize: 11, fill: '#9CA3AF' }} axisLine={false} tickLine={false} tickFormatter={d => new Date(d).toLocaleDateString('en-US', { month: 'short' })} />
                 <YAxis tick={{ fontSize: 11, fill: '#9CA3AF' }} axisLine={false} tickLine={false} tickFormatter={v => `$${(v / 1000).toFixed(0)}k`} />
-                <Tooltip formatter={(v: number) => [formatCurrency(v), 'Value']} contentStyle={{ borderRadius: 12, border: '1px solid #E5E7EB', fontSize: 12 }} />
+                <Tooltip formatter={(v: any) => [formatCurrency(v), 'Value'] as any} contentStyle={{ borderRadius: 12, border: '1px solid #E5E7EB', fontSize: 12 }} />
                 <Area type="monotone" dataKey="value" stroke="#0047AB" strokeWidth={2} fill="url(#portGrad)" />
               </AreaChart>
             </ResponsiveContainer>
@@ -77,7 +77,7 @@ export default function PortfolioView() {
                     <Cell key={i} fill={COLORS[i]} />
                   ))}
                 </Pie>
-                <Tooltip formatter={(v: number) => [`${v}%`, '']} contentStyle={{ borderRadius: 12, border: '1px solid #E5E7EB', fontSize: 12 }} />
+                <Tooltip formatter={(v: any) => [`${v}%`, ''] as any} contentStyle={{ borderRadius: 12, border: '1px solid #E5E7EB', fontSize: 12 }} />
               </PieChart>
             </ResponsiveContainer>
           </div>

@@ -223,7 +223,7 @@ export default function LandingPage() {
                     </defs>
                     <XAxis dataKey="month" tick={{ fontSize: 11, fill: '#9CA3AF' }} axisLine={false} tickLine={false} />
                     <YAxis tick={{ fontSize: 11, fill: '#9CA3AF' }} axisLine={false} tickLine={false} tickFormatter={v => `$${(v / 1000).toFixed(0)}k`} />
-                    <Tooltip formatter={(v: number) => [`$${v.toFixed(0)}`, '']} contentStyle={{ borderRadius: 12, border: '1px solid #E5E7EB', fontSize: 12 }} />
+                    <Tooltip formatter={(v: any) => [`$${v.toFixed(0)}`, ''] as any} contentStyle={{ borderRadius: 12, border: '1px solid #E5E7EB', fontSize: 12 }} />
                     <Area type="monotone" dataKey="conservative" stroke="#10B981" strokeWidth={2} fill="url(#gradCons)" />
                     <Area type="monotone" dataKey="balanced" stroke="#0047AB" strokeWidth={2} fill="url(#gradBal)" />
                     <Area type="monotone" dataKey="aggressive" stroke="#F59E0B" strokeWidth={2} fill="url(#gradAgg)" />

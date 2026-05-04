@@ -180,7 +180,7 @@ export default function GoalWizard() {
                   </defs>
                   <XAxis dataKey="year" tick={{ fontSize: 11, fill: '#9CA3AF' }} axisLine={false} tickLine={false} tickFormatter={y => `Y${y}`} />
                   <YAxis tick={{ fontSize: 11, fill: '#9CA3AF' }} axisLine={false} tickLine={false} tickFormatter={v => `$${(v / 1000).toFixed(0)}k`} />
-                  <Tooltip formatter={(v: number) => [formatCurrency(v), '']} contentStyle={{ borderRadius: 12, border: '1px solid #E5E7EB', fontSize: 12 }} />
+                  <Tooltip formatter={(v: any) => [formatCurrency(v), ''] as any} contentStyle={{ borderRadius: 12, border: '1px solid #E5E7EB', fontSize: 12 }} />
                   <Area type="monotone" dataKey="p90" stroke="none" fill="#0047AB" fillOpacity={0.05} />
                   <Area type="monotone" dataKey="median" stroke="#0047AB" strokeWidth={2} fill="url(#coneGrad)" />
                   <Area type="monotone" dataKey="p10" stroke="none" fill="#0047AB" fillOpacity={0.03} />

@@ -74,7 +74,7 @@ export default function DashboardHome() {
                 </defs>
                 <XAxis dataKey="date" tick={{ fontSize: 11, fill: '#9CA3AF' }} axisLine={false} tickLine={false} tickFormatter={d => new Date(d).toLocaleDateString('en-US', { month: 'short' })} />
                 <YAxis tick={{ fontSize: 11, fill: '#9CA3AF' }} axisLine={false} tickLine={false} tickFormatter={v => `$${(v / 1000).toFixed(0)}k`} />
-                <Tooltip formatter={(v: number) => [formatCurrency(v), 'Value']} labelFormatter={l => formatDate(l as string)} contentStyle={{ borderRadius: 12, border: '1px solid #E5E7EB', fontSize: 12 }} />
+                <Tooltip formatter={(v: any) => [formatCurrency(v), 'Value'] as any} labelFormatter={l => formatDate(l as string)} contentStyle={{ borderRadius: 12, border: '1px solid #E5E7EB', fontSize: 12 }} />
                 <Area type="monotone" dataKey="value" stroke="#0047AB" strokeWidth={2} fill="url(#dashGrad)" />
               </AreaChart>
             </ResponsiveContainer>
