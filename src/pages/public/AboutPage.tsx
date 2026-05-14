@@ -1,6 +1,51 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, Globe, Shield, Users, Award } from 'lucide-react'
 
+const team = [
+  {
+    name: 'Gabriela Nowak',
+    role: 'AI, Strategy & Business Transformation Advisor',
+    bio: 'Gabriela is an AI, Strategy & Business Transformation Consulting Director with over 15 years advising and leading programs for the Financial, Technology, and Healthcare sectors. She has a proven record of delivering shareholder value creation through technological advancement for portfolio companies, with deep expertise in Mergers and Acquisitions (M&A) and operating models across CEMEA. Since March 2025, she is Founder of Janzen Advisory & Partners, an ADGM-registered boutique technology and strategy advisory focused on AI-powered advisory services for SME.',
+    credentials: ['Executive MBA, INSEAD', 'MSc Economics and Marketing, Gdansk University of Technology', 'BA (Hons) Business Administration, Robert Gordon University', 'PMP Certified | CFA in progress']
+  },
+  {
+    name: 'Anand Vengurlekar',
+    role: 'INSEAD Faculty | Senior Lecturer & Lead Facilitator, Strategy & Innovation',
+    bio: 'Anand is INSEAD\'s senior lecturer and lead facilitator for C-level strategy and innovation workshops. His approach combines three career experiences: global strategic roles at multinationals including the Ministry of Economy of UAE, Samsung Scandinavia, and SONY Europe; significant design thinking expertise from LEGO and IDEO; and an academic foundation through a Global Executive MBA from INSEAD.',
+    credentials: ['Global Executive MBA, INSEAD', 'Business Coaching Diploma, PWC & ICF']
+  },
+  {
+    name: 'Candice Elsmore',
+    role: 'Startup Advisor | Angel Investor | Venture Growth Strategist',
+    bio: 'Candice Elsmore helps founders raise capital, scale teams strategically, and implement the operational frameworks needed to accelerate from ambition to execution. She has 7+ years in M&A advisory in London, including the Aston Martin IPO, and served as COO at a technology M&A boutique.',
+    credentials: ['MBA, London Business School', 'Exchange Program, Wharton School']
+  },
+  {
+    name: 'Ramy Lahoud',
+    role: 'Ecosystem & Alliance Expert | EMEA Market Accelerator',
+    bio: 'Ramy Lahoud is a seasoned strategist and market accelerator with over 20 years of experience in the technology industry across the Middle East and Africa. Known for his sharp acumen in Go-To-Market (GTM) strategies, alliance building, and ecosystem development, Ramy has successfully guided international businesses in navigating complex regional landscapes.',
+    credentials: ['INSEAD EMBA', 'Active mentor and angel investor across UAE startup ecosystem']
+  },
+  {
+    name: 'Zara Basharat Higgs',
+    role: 'Public Policy, Communications & Sustainability Expert',
+    bio: 'Zara has a prolific international career spanning 20 years across tech, corporate and the development sector. She served as Head of Public Policy Programs and Partnerships for Middle East, Türkiye, Africa, Pakistan and South Asia at TikTok, and has led Communications and Sustainability portfolios at Jazz, PepsiCo, Nestlé, the World Bank and the UN.',
+    credentials: ['MBA, London Business School', 'Social Impact Strategy, University of Pennsylvania']
+  },
+  {
+    name: 'Sanita Pukite',
+    role: 'Psychodynamic Leadership & Team Coach',
+    bio: 'Sanita Pukite empowers senior leaders and teams operating in complex, high-pressure environments to improve decision quality, relational intelligence, and sustain high-performance over time. With 20+ years of global sales, strategy and leadership across 3 continents — including 16 years at Johnson & Johnson as an ELT Member.',
+    credentials: ['Executive MBA, INSEAD', 'Masters Degree: Consulting and Leading in Organizations, Tavistock Institute', 'Executive Coaching Certificate, INSEAD']
+  },
+  {
+    name: 'Robert J. Webb',
+    role: 'Global CIO | Executive Advisor | Digital Transformation Guide',
+    bio: 'Rob Webb is an accomplished global technology executive, digital transformation guide, growth advisor, management consultant and executive coach. He served most recently as Digital and Technology Advisor to the GCEO for DGDA, the $150B heritage and real estate development project part of the Saudi Vision 2030 Program. Previously, he held the positions of Global CIO for Etihad Aviation Group and Hilton Worldwide.',
+    credentials: ['Executive Masters in Consulting and Coaching for Change, INSEAD', 'Advanced Executive Coaching Certification, Columbia Business School', 'MBA, ESCP European School of Management']
+  }
+]
+
 export default function AboutPage() {
   return (
     <div>
@@ -61,8 +106,31 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Markets */}
+      {/* Team Section */}
       <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl lg:text-3xl font-bold text-text-primary text-center mb-12">Our Team</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {team.map(member => (
+              <div key={member.name} className="bg-white rounded-xl border border-border p-6 hover:shadow-lg transition-shadow">
+                <h3 className="text-xl font-bold text-text-primary mb-1">{member.name}</h3>
+                <p className="text-sm font-medium text-brand mb-4">{member.role}</p>
+                <p className="text-sm text-text-secondary mb-4 leading-relaxed">{member.bio}</p>
+                <div className="space-y-1">
+                  {member.credentials.map((cred, i) => (
+                    <p key={i} className="text-xs text-text-muted flex items-start gap-2">
+                      <span className="text-brand mt-0.5">•</span> {cred}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Markets */}
+      <section className="bg-surface-secondary py-20 border-y border-border">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl lg:text-3xl font-bold text-text-primary mb-8">Target Markets</h2>
           <div className="grid sm:grid-cols-3 gap-6">
