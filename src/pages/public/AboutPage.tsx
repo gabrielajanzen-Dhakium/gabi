@@ -1,54 +1,56 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, Globe, Shield, Users, Award } from 'lucide-react'
+import gabrielaPhoto from '../../assets/gabriela-nowak.png'
 
-const team = [
-  {
-    name: 'Gabriela Nowak',
-    role: 'AI, Strategy & Business Transformation Advisor',
-    bio: 'Gabriela is an AI, Strategy & Business Transformation Consulting Director with over 15 years advising and leading programs for the Financial, Technology, and Healthcare sectors. She has a proven record of delivering shareholder value creation through technological advancement for portfolio companies, with deep expertise in Mergers and Acquisitions (M&A) and operating models across CEMEA. Since March 2025, she is Founder of Janzen Advisory & Partners, an ADGM-registered boutique technology and strategy advisory focused on AI-powered advisory services for SME.',
-    credentials: ['Executive MBA, INSEAD', 'MSc Economics and Marketing, Gdansk University of Technology', 'BA (Hons) Business Administration, Robert Gordon University', 'PMP Certified | CFA in progress']
-  },
+const partners = [
   {
     name: 'Anand Vengurlekar',
     role: 'INSEAD Faculty | Senior Lecturer & Lead Facilitator, Strategy & Innovation',
-    bio: 'Anand is INSEAD\'s senior lecturer and lead facilitator for C-level strategy and innovation workshops. His approach combines three career experiences: global strategic roles at multinationals including the Ministry of Economy of UAE, Samsung Scandinavia, and SONY Europe; significant design thinking expertise from LEGO and IDEO; and an academic foundation through a Global Executive MBA from INSEAD.',
-    credentials: ['Global Executive MBA, INSEAD', 'Business Coaching Diploma, PWC & ICF']
+    bio: "Anand is INSEAD's senior lecturer and lead facilitator for C-level strategy and innovation workshops. His approach combines global strategic roles at multinationals including the Ministry of Economy of UAE, Samsung Scandinavia, and SONY Europe; significant design thinking expertise from LEGO and IDEO where he led innovation projects for Fortune 50 companies; and an academic foundation through a Global Executive MBA from INSEAD. He has taught leadership, strategy, and innovation on INSEAD's customised programs for 7 years, as well as through PWC, Mubadala, Korn Ferry, Emiritus and McKinsey.",
+    credentials: ['Global Executive MBA, INSEAD', 'Business Coaching Diploma, PWC & ICF'],
+    tags: ['MBA, INSEAD', 'PWC & ICF Coaching'],
   },
   {
     name: 'Candice Elsmore',
     role: 'Startup Advisor | Angel Investor | Venture Growth Strategist',
-    bio: 'Candice Elsmore helps founders raise capital, scale teams strategically, and implement the operational frameworks needed to accelerate from ambition to execution. She has 7+ years in M&A advisory in London, including the Aston Martin IPO, and served as COO at a technology M&A boutique.',
-    credentials: ['MBA, London Business School', 'Exchange Program, Wharton School']
+    bio: 'Candice Elsmore helps founders raise capital, scale teams strategically, and implement the operational frameworks needed to accelerate from ambition to execution. She brings 7+ years in M&A advisory in London — including the Aston Martin IPO — and served as COO at Arma Partners, a technology M&A boutique subsequently acquired by a global merchant bank. She is Co-Founder & COO/CFO of TechPulse Inc., a US-based AI-powered automotive diagnostic platform, and Strategic Advisor to Nolana, a London-based AI Fintech.',
+    credentials: ['MBA, London Business School (Mo Ibrahim Foundation Scholar)', 'Exchange Program, Wharton School, University of Pennsylvania'],
+    tags: ['MBA, London Business School', 'Wharton Exchange'],
   },
   {
     name: 'Ramy Lahoud',
-    role: 'Ecosystem & Alliance Expert | EMEA Market Accelerator',
-    bio: 'Ramy Lahoud is a seasoned strategist and market accelerator with over 20 years of experience in the technology industry across the Middle East and Africa. Known for his sharp acumen in Go-To-Market (GTM) strategies, alliance building, and ecosystem development, Ramy has successfully guided international businesses in navigating complex regional landscapes.',
-    credentials: ['INSEAD EMBA', 'Active mentor and angel investor across UAE startup ecosystem']
+    role: 'Ecosystem & Alliance Expert | EMEA Market Accelerator for B2B Enterprise',
+    bio: 'Ramy Lahoud is a seasoned strategist and market accelerator with over 20 years of experience in the technology industry across the Middle East and Africa. Known for his sharp acumen in Go-To-Market (GTM) strategies, alliance building, and ecosystem development, Ramy has successfully guided international businesses in navigating complex regional landscapes. As a Partner at A8 Innovation, he brings a future-forward mindset rooted in operational excellence and collaborative growth. As co-founder of Realex (PropTech) and an active angel investor, Ramy combines entrepreneurial energy with deep market expertise to drive innovation and strategic growth for clients.',
+    credentials: ['INSEAD EMBA', 'Active mentor and angel investor across UAE startup ecosystem'],
+    tags: ['Executive MBA, INSEAD', 'Channel & Alliance Expert'],
   },
   {
     name: 'Zara Basharat Higgs',
     role: 'Public Policy, Communications & Sustainability Expert',
-    bio: 'Zara has a prolific international career spanning 20 years across tech, corporate and the development sector. She served as Head of Public Policy Programs and Partnerships for Middle East, Türkiye, Africa, Pakistan and South Asia at TikTok, and has led Communications and Sustainability portfolios at Jazz, PepsiCo, Nestlé, the World Bank and the UN.',
-    credentials: ['MBA, London Business School', 'Social Impact Strategy, University of Pennsylvania']
+    bio: 'Zara has a prolific international career spanning 20 years across tech, corporate and the development sector, with a focus on public policy, communications, sustainability and strategy. She served as Head of Public Policy Programs and Partnerships for Middle East, Türkiye, Africa, Pakistan and South Asia at TikTok, where she built and led the programs portfolio focusing on strategic partnerships to address critical regional challenges — from education access and digital safety to climate change. She has also led Communications and Sustainability portfolios at Jazz (VEON Group), PepsiCo, Nestlé, the World Bank and the United Nations Information Centre.',
+    credentials: ['MBA, London Business School', 'Social Impact Strategy, University of Pennsylvania', 'IVLP: Developing Future Women Leaders (U.S. State Department)'],
+    tags: ['MBA, London Business School', 'UPenn Social Impact'],
   },
   {
     name: 'Sanita Pukite',
-    role: 'Psychodynamic Leadership & Team Coach',
-    bio: 'Sanita Pukite empowers senior leaders and teams operating in complex, high-pressure environments to improve decision quality, relational intelligence, and sustain high-performance over time. With 20+ years of global sales, strategy and leadership across 3 continents — including 16 years at Johnson & Johnson as an ELT Member.',
-    credentials: ['Executive MBA, INSEAD', 'Masters Degree: Consulting and Leading in Organizations, Tavistock Institute', 'Executive Coaching Certificate, INSEAD']
+    role: 'Psychodynamic Leadership & Team Coach | Ex-J&J EMEA Leader | INSEAD Alumni',
+    bio: 'Sanita Pukite empowers senior leaders and teams operating in complex, high-pressure environments to improve decision quality, relational intelligence, and sustain high-performance over time. Her work integrates adaptive leadership with deep insight into the psychological dynamics of pressure. With 20+ years of global sales, strategy and leadership across 3 continents — including 16 years at Johnson & Johnson as an ELT Member — Sanita brings cross-functional team leadership, Regional Strategy, Brand Leadership, Digital Transformation, M&A, CEO Advisory, and L&D expertise. She has been based in the Middle East for 10 years.',
+    credentials: ['Executive MBA, INSEAD', 'Masters Degree: Consulting and Leading in Organizations (Psychodynamic), Tavistock Institute, UK', 'Executive Coaching Certificate, INSEAD', 'ICF Accredited, ACC'],
+    tags: ['Executive MBA, INSEAD', 'Masters, Tavistock Institute'],
   },
   {
     name: 'Robert J. Webb',
-    role: 'Global CIO | Executive Advisor | Digital Transformation Guide',
-    bio: 'Rob Webb is an accomplished global technology executive, digital transformation guide, growth advisor, management consultant and executive coach. He served most recently as Digital and Technology Advisor to the GCEO for DGDA, the $150B heritage and real estate development project part of the Saudi Vision 2030 Program. Previously, he held the positions of Global CIO for Etihad Aviation Group and Hilton Worldwide.',
-    credentials: ['Executive Masters in Consulting and Coaching for Change, INSEAD', 'Advanced Executive Coaching Certification, Columbia Business School', 'MBA, ESCP European School of Management']
-  }
+    role: 'Global CIO | Executive Advisor | Digital Transformation Guide & Executive Coach',
+    bio: 'Rob Webb is an accomplished global technology executive, digital transformation guide, growth advisor, management consultant and executive coach with proven expertise driving strategic change through technology innovation. He served most recently as Digital and Technology Advisor to the GCEO for DGDA, the $150B heritage and real estate development project part of the Saudi Vision 2030 Program. Previously, he held the positions of Global CIO for Etihad Aviation Group, Global CIO for Hilton Worldwide, Global CIO at Equifax, and divisional CIO positions at General Electric. He began his career as a management consultant with Accenture.',
+    credentials: ['Executive Masters in Consulting and Coaching for Change, INSEAD Singapore', 'Advanced Executive Coaching Certification, Columbia Business School', 'MBA, ESCP European School of Management, Paris'],
+    tags: ['MBA, ESCP Europe', 'Executive Masters, INSEAD'],
+  },
 ]
 
 export default function AboutPage() {
   return (
     <div>
+      {/* Hero */}
       <section className="bg-gradient-to-br from-brand-50 via-white to-indigo-50 py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-5xl font-extrabold text-text-primary tracking-tight animate-fade-in-up">About Dhakium</h1>
@@ -106,20 +108,62 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-20">
+      {/* Team — Founder Feature */}
+      <section className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl lg:text-3xl font-bold text-text-primary text-center mb-12">Our Team</h2>
+          <div className="text-center mb-16">
+            <p className="text-xs font-semibold tracking-widest text-brand uppercase mb-3">Leadership</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-text-primary">Our Team</h2>
+            <p className="mt-4 text-lg text-text-secondary max-w-2xl mx-auto">
+              Founded and led by a seasoned strategist with deep expertise in AI, transformation, and growth advisory.
+            </p>
+          </div>
+
+          {/* Gabriela Nowak — Founder Featured Card */}
+          <div className="bg-white rounded-2xl border border-border shadow-sm overflow-hidden mb-16">
+            <div className="grid md:grid-cols-2 gap-0">
+              {/* Photo */}
+              <div className="relative h-80 md:h-auto overflow-hidden bg-brand-50">
+                <img
+                  src={gabrielaPhoto}
+                  alt="Gabriela Janzen-Nowak"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+              {/* Bio */}
+              <div className="p-8 lg:p-12 flex flex-col justify-center">
+                <p className="text-xs font-semibold tracking-widest text-brand uppercase mb-3">Managing Director &amp; Founder</p>
+                <h3 className="text-2xl lg:text-3xl font-bold text-text-primary mb-1">Gabriela Janzen-Nowak</h3>
+                <p className="text-brand font-medium mb-6">AI, Strategy &amp; Business Transformation</p>
+                <p className="text-text-secondary leading-relaxed mb-4">
+                  Founder of Janzen Advisory &amp; Partners, Gabriela is an AI, Strategy &amp; Business Transformation Consulting Director with deep expertise in operational execution, digital transformation, and guiding late-stage SMEs through critical growth phases towards successful acquisitions or significant investment rounds.
+                </p>
+                <p className="text-text-secondary leading-relaxed mb-6">
+                  With a career spanning C-level advisory across the UAE and international markets, Gabriela combines academic rigor with hands-on entrepreneurial experience to unlock value and position ambitious enterprises for premium exits.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {['INSEAD', 'C-Level Advisory', 'AI Strategy', 'M&A Readiness'].map(tag => (
+                    <span key={tag} className="px-3 py-1 bg-brand-light text-brand text-xs font-semibold rounded-full">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Partners Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {team.map(member => (
-              <div key={member.name} className="bg-white rounded-xl border border-border p-6 hover:shadow-lg transition-shadow">
-                <h3 className="text-xl font-bold text-text-primary mb-1">{member.name}</h3>
-                <p className="text-sm font-medium text-brand mb-4">{member.role}</p>
-                <p className="text-sm text-text-secondary mb-4 leading-relaxed">{member.bio}</p>
-                <div className="space-y-1">
+            {partners.map(member => (
+              <div key={member.name} className="bg-white rounded-xl border border-border p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col">
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold text-text-primary mb-1">{member.name}</h3>
+                  <p className="text-sm font-medium text-brand mb-4 leading-snug">{member.role}</p>
+                  <p className="text-sm text-text-secondary leading-relaxed mb-4">{member.bio}</p>
+                </div>
+                <div className="mt-4 pt-4 border-t border-border space-y-1">
                   {member.credentials.map((cred, i) => (
                     <p key={i} className="text-xs text-text-muted flex items-start gap-2">
-                      <span className="text-brand mt-0.5">•</span> {cred}
+                      <span className="text-brand mt-0.5 shrink-0">•</span>
+                      <span>{cred}</span>
                     </p>
                   ))}
                 </div>
